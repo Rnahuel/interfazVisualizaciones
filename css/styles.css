@@ -1176,6 +1176,8 @@ progress {
   }
 
   .col-md-6 {
+    margin-left: auto;
+    margin-right: auto;
     flex: 0 0 auto;
     width: 50%;
   }
@@ -2326,6 +2328,12 @@ progress {
 .form-control-plaintext.form-control-sm, .form-control-plaintext.form-control-lg {
   padding-right: 0;
   padding-left: 0;
+}
+.col-md-69 {
+  margin-left: auto;
+  margin-right: auto;
+  flex: 0 0 auto;
+  width: 100%;
 }
 
 .form-control-sm {
