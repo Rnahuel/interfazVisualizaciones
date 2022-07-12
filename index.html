@@ -15,7 +15,39 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <script>function ajusta() {
+            var horizontales = document.querySelectorAll("#graficos .horizontal"); 
+            var arcos = document.querySelectorAll("#graficos .arco"); 
+            var torres = document.querySelectorAll("#graficos #vertical .torre"); 
+            
+            var elem = 0; 
+            while(elem < horizontales.length) {
+            horizontales[elem].style.transition = "background-size 3s ease-in-out 2s"; 
+            horizontales[elem].style.backgroundSize = horizontales[elem].innerHTML+" 100%"; 
+            elem++; 
+            }; 
+            
+            elem = 0; 
+            while(elem<torres.length) {
+            torres[elem].style.transition = "background-size 1s ease-out "+(elem+4)+"s"; 
+            torres[elem].style.backgroundSize = "80% "+ torres[elem].innerHTML; 
+            elem++; 
+            }; 
+            
+            elem = 0; 
+            while(elem<arcos.length) {
+            arcos[elem].style.backgroundImage = "radial-gradient(circle at bottom, white 45%, transparent 47%, transparent 67%, white 70%), linear-gradient("
+            + (parseInt(arcos[elem].innerHTML) / 100) * 180 +
+            "deg, green 50%, transparent 50%)"; 
+            elem++; 
+            }; 
+            
+            }
+            
+            onload = ajusta; 
+            </script>
     </head>
+   
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -43,6 +75,54 @@
                 <a class="btn btn-primary btn-xl text-uppercase" href="form.html">Iniciar Atención</a>
             </div>
         </header>
+        <section class="page-section" id="about">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Sobre nosotros</h2>
+                    <h3 class="section-subheading text-muted" style="padding:2em;">Somos una empresa dedica a la atencion medica virtual, nos encargamos
+                        de dar una atencion rapida y previa para facilitar el trabajo de nuestros doctores en la cita presencial.
+                    </h3>
+                    <div class="row">
+                        <h2>Nuestras Especialidades mas Consultadas</h2>
+                    <article class="posicionamiento">
+                        
+                        <div class="grafico">
+                          <div id="hueco">
+                            <div class="mes">Medicina General</div>
+                            <div class="anio">45%</div>
+                          </div>
+                          <div id="porcion1" class="recorte">
+                            <div class="quesito1"></div>
+                            <div class="quesito11"></div>
+                          </div>
+                      </article>
+                      <article class="posicionamiento">
+                        
+                        <div class="grafico">
+                          <div id="hueco">
+                            <div class="mes">Cardiologia</div>
+                            <div class="anio">30%</div>
+                          </div>
+                          <div id="porcion2" class="recorte">
+                            <div class="quesito2"></div>
+                            <div class="quesito22"></div>
+                          </div>
+                      </article>
+                      <article class="posicionamiento">
+                        
+                        <div class="grafico">
+                          <div id="hueco">
+                            <div class="mes">Otras</div>
+                            <div class="anio">25%</div>
+                          </div>
+                          <div id="porcion3" class="recorte">
+                            <div class="quesito3"></div>
+                            <div class="quesito33"></div>
+                          </div>
+                      </article>
+                    </div>
+            </div>
+        </section>
         <!-- Contact-->
         <section class="page-section" id="contact">
             <div class="container">
